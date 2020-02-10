@@ -1,14 +1,11 @@
-from flask import Flask, send_file, Response, render_template
+from flask import Flask, send_file, render_template
+import db
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def home_text():
-    # with open('pathes', 'r') as text:
-    #     content = text.read()
-    # return render_template('pathes.html', content=content)
-
     return render_template('pathes.html')
 
 
@@ -24,7 +21,7 @@ def show_json():
 
 @app.route("/db/")
 def show_db():
-    pass
+    print(db.data)
 
 
 if __name__ == "__main__":
