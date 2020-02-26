@@ -1,5 +1,6 @@
 from flask import Flask, send_file, render_template
-import db
+
+import db_sqlite
 
 app = Flask(__name__)
 
@@ -21,7 +22,7 @@ def show_json():
 
 @app.route("/db/")
 def show_db():
-    print(db.data)
+    print(db_sqlite.get_some_data())
 
 
 if __name__ == "__main__":
