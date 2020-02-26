@@ -22,7 +22,7 @@ def show_json():
 
 @app.route("/db/")
 def show_db():
-    print(db_sqlite.get_some_data())
+    return db_sqlite.get_some_data()
 
 
 if __name__ == "__main__":
